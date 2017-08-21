@@ -36,14 +36,37 @@ public class BallplayerDAOImpl implements BallplayerDAO{
 
 	@Override
 	public Ballplayer update(int id, Ballplayer player) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	        Ballplayer managed = null;
+			try {
+			
+			managed=em.find(Ballplayer.class, id);
+			managed.setName(player.getName());
+			managed.setSeason(player.getSeason());
+			managed.setAtBats(player.getAtBats());
+			managed.setHomeRuns(player.getHomeRuns());
+			managed.setAnnualSalary(player.getAnnualSalary());
+			managed.setAtBatsPerHomeRun(player.getAtBatsPerHomeRun());
+
+			//em.persist(player);  //here I am not ADDing another ballplayer, just now making the entity now residing in the Persistence Context to be moved to the database 
+			em.flush();
+		
+			} catch (Exception e)  {
+				e.printStackTrace();
+			}
+			return managed;
+			
+		}
+
 
 	@Override
 	public boolean destroy(int id) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
+			Ballplayer deletedPlayer = em.find(Ballplayer.class, id);  
+			em.remove(deletedPlayer);
+			if (deletedPlayer==null) {
+				return false;
+			}	
+			return true;
+		}
+	
 }
+
