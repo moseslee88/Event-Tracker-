@@ -12,4 +12,6 @@ public interface BallplayerDAO {
 	public Ballplayer create(Ballplayer player);
 	public Ballplayer update(int id, Ballplayer player);
 	public boolean destroy(int id);
+	
+	
 }

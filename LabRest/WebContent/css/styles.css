@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+
+body {
+	color: #ffff66;
+
+	background-image: url("http://www.trbimg.com/img-571a63e0/turbine/la-sp-dn-clayton-kershaw-eephus-pitch-braves-20160422");
+	min-height: 100%;
+	background-repeat: no-repeat;
+    background-attachment: fixed; 
+	background-position: center;
+	background-size: cover;
+	z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+ 

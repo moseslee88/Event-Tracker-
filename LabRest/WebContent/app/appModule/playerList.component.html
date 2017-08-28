@@ -1,0 +1,134 @@
+<h1 ng-hide="vm.selected">HELLO BASEBALL FANS</h1>
+
+ <form ng-show="vm.editPlayer">       <!--  hides the form-->
+
+     <input type="text" placeholder="name" ng-model="player.name"/><br />
+     SEASON: <select name="Season" id="slectboxid" value="${player.season}">
+								<option>1998</option>
+								<option>1999</option>
+								<option>2000</option>
+								<option>2001</option>
+								<option>2002</option>
+								<option>2003</option>
+								<option>2004</option>
+								<option>2005</option>
+								<option>2006</option>
+								<option>2007</option>
+								<option>2008</option>
+								<option>2009</option>
+								<option>2010</option>
+								<option>2011</option>
+								<option>2012</option>
+								<option>2013</option>
+								<option>2014</option>
+								<option>2015</option>
+								<option>2016</option>
+								<option>2017</option>
+     
+     </select><br>
+     <input type="text" placeholder="atBats" ng-model="player.atBats"/><br />
+     <input type="text" placeholder="homers" ng-model="player.homeRuns"/><br />
+     <input type="text" placeholder="salary" ng-model="player.annualSalary"/><br />
+     <input type="text" placeholder="AtBats per HR ratio" ng-model="player.atBatsPerHomeRun"/><br />
+     <input type="submit" value="Cancel" ng-click="vm.cancelButtonNullFields(); player ={}"></input>
+     <input type="submit" value="Save" ng-click="vm.editBallplayer(vm.editPlayer.id, player); vm.editPlayer = null" ><</input>
+ </form>
+ 
+ 
+  <form ng-hide="vm.selected">       <!--  hides the form-->
+
+     <input type="text" placeholder="name" ng-model="player.name"/><br />
+     SEASON: <select name="Season" id="slectboxid" value="${player.season}">
+								<option>1998</option>
+								<option>1999</option>
+								<option>2000</option>
+								<option>2001</option>
+								<option>2002</option>
+								<option>2003</option>
+								<option>2004</option>
+								<option>2005</option>
+								<option>2006</option>
+								<option>2007</option>
+								<option>2008</option>
+								<option>2009</option>
+								<option>2010</option>
+								<option>2011</option>
+								<option>2012</option>
+								<option>2013</option>
+								<option>2014</option>
+								<option>2015</option>
+								<option>2016</option>
+								<option>2017</option>
+     
+     </select><br>
+     <input type="text" placeholder="atBats" ng-model="player.atBats"/><br />
+     <input type="text" placeholder="homers" ng-model="player.homeRuns"/><br />
+     <input type="text" placeholder="salary" ng-model="player.annualSalary"/><br />
+     <input type="text" placeholder="AtBats per HR ratio" ng-model="player.atBatsPerHomeRun"/><br />
+
+     <input type="submit" value="Add Player Object" ng-click="vm.createBallplayer(player); player ={}"/>
+ </form>
+ 
+ 
+ 
+
+<table ng-hide="vm.selected">      <!--  hides the table-->
+  <h4>
+ <tr>
+    <th>ID</th>
+    <th>Player Name</th> 
+    <th>Season</th>
+    <th>At-Bats</th> 
+    <th>Home Runs</th> 
+    <th>Annual Salary</th> 
+    <th>AtBats/HomeRun</th> 
+
+  </tr>
+  
+  
+  <tr ng-repeat="item in vm.ballplayers">
+    <td><button id="btn"  ng-click="vm.displayPlayer(item)" > {{item.id}}</button></td>   
+    <td>{{item.name}}</td>
+    <td>Season: {{item.season}}</td>
+    <td>{{item.atBats}}</td>
+    <td>{{item.homeRuns}}</td>
+    <td>{{item.annualSalary}}</td>
+    <td>{{item.atBatsPerHomeRun}}</td>
+    <td><button id="btn" ng-click="vm.destroyBallplayer(item.id)" > DELETE Player</button></td>
+  </tr>
+ 
+ </table>
+ 
+ 
+ <!--  DETAILS DIV-->
+ <div ng-show="vm.selected" ng-hide="vm.editTodo"><button id="btn"  ng-show="vm.selected" ng-click="vm.displayTable()" > GO BACK / Display Table</button> 
+   <h6>ID: {{vm.selected.id}}</h6>
+   <h6>Player name: {{vm.selected.name}}</h6>
+   <h6>Season: {{vm.selected.season}}</h6>
+   <h6>At-Bats: {{vm.selected.atBats}}</h6>
+   <h2>
+    <i>HOME RUNS: {{vm.selected.homeRuns}}</i>
+  </h2>
+   <h6>Salary: ${{vm.selected.annualSalary}}</h6>
+   <h6>At-Bats PER Homer: {{vm.selected.atBatsPerHomeRun}}</h6>
+ <button id="btn"  ng-click="vm.setEditTodoPlayer()" > Edit this Player</button>
+ </div>
+
+ 
+ <!-- <button id="btn"  ng-click="vm.log(vm.listOfBooks[1].name)">Log in</button> 
+ 
+ 
+    <td><input type="checkbox" ng-model="item.completed"/>{{item.completed}}</td>
+    
+    
+      <form ng-show="vm.editPlayer" ng-hide="vm.selected" >
+     <input type="text" placeholder="task" ng-model="vm.editPlayer.task"/><br />
+      <input type="checkbox" placeholder="completed" ng-model="vm.editTodo.completed"/><br />
+     <input type="text" placeholder="description" ng-model="vm.editTodo.description"/><br />
+
+     <input type="submit" value="Cancel" ng-click="vm.cancelButtonNullFields(); todos ={}"></input>
+     <input type="submit" value="Save" ng-click="vm.updateTodo(vm.editTodo); vm.editPlayer = null" ><</input>
+ </form>-->
+
+ 
+

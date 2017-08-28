@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html ng-app="appModule">  <!--   here we are giving ng-app the specific module name; we have to explicitly import the script src file -->
+  <head>
+     <meta charset="utf-8">
+     <title>Ballplayer Event Tracker</title>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+          <script src="app/appModule/app.module.js"></script>
+     <!-- Services -->
+     <script src="app/appModule/ballplayer.service.js"></script>
+      <!-- Components -->
+   <script src="app/appModule/playerList.component.js"></script>
+     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+  </head>
+  <body>
+
+
+     <!--  <h1 ng-hide="true">Hello World</h1>     ** hides the header HELLO WORLD
+      <h1>Hello World</h1>-->
+    
+    
+     <h1 >{{ 'Hello MLB FANS' }}!!!</h1>
+    
+     <player-list>Loading...</player-list>
+
+  </body>
+</html>

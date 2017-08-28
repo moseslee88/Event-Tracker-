@@ -38,7 +38,7 @@ public class BallplayerController {
 	public Ballplayer show(@PathVariable int id) {
 		return dao.show(id);
 	}
-	
+	   
 	//controller method for creating a new Ballplayer
 	@RequestMapping(path = "ballplayers", method = RequestMethod.POST)
 	public Ballplayer create(@RequestBody String labJSON, HttpServletResponse res) {
