@@ -99,23 +99,14 @@
  
  </table>
  
+ <h2>TOTAL AGENT FEES PER YEAR : ${{vm.agentFees}}</h2>  
  
- <!--  DETAILS DIV-->
- <div ng-show="vm.selected" ng-hide="vm.editTodo"><button id="btn"  ng-show="vm.selected" ng-click="vm.displayTable()" > GO BACK / Display Table</button> 
-   <h6>ID: {{vm.selected.id}}</h6>
-   <h6>Player name: {{vm.selected.name}}</h6>
-   <h6>Season: {{vm.selected.season}}</h6>
-   <h6>At-Bats: {{vm.selected.atBats}}</h6>
-   <h2>
-    <i>HOME RUNS: {{vm.selected.homeRuns}}</i>
-  </h2>
-   <h6>Salary: ${{vm.selected.annualSalary}}</h6>
-   <h6>At-Bats PER Homer: {{vm.selected.atBatsPerHomeRun}}</h6>
- <button id="btn"  ng-click="vm.setEditTodoPlayer()" > Edit this Player</button>
- </div>
+ 
+ 
+ <!--
+ <h1>TOTAL AGENT FEES PER YEAR : ${{vm.agentFees}}</h1>
 
- 
- <!-- <button id="btn"  ng-click="vm.log(vm.listOfBooks[1].name)">Log in</button> 
+  <button id="btn"  ng-click="vm.log(vm.listOfBooks[1].name)">Log in</button> 
  
  
     <td><input type="checkbox" ng-model="item.completed"/>{{item.completed}}</td>
@@ -128,7 +119,36 @@
 
      <input type="submit" value="Cancel" ng-click="vm.cancelButtonNullFields(); todos ={}"></input>
      <input type="submit" value="Save" ng-click="vm.updateTodo(vm.editTodo); vm.editPlayer = null" ><</input>
- </form>-->
+ </form>
+ 
+ 
+ 
+ 
+ 
+ 
+      ----DETAILS DIV-----
+ <div ng-show="vm.selected" ng-hide="vm.editTodo"><button id="btn"  ng-show="vm.selected" ng-click="vm.displayTable()" > GO BACK / Display Table</button> 
+   <h6>ID: {{vm.selected.id}}</h6>
+   <h6>Player name: {{vm.selected.name}}</h6>
+   <h6>Season: {{vm.selected.season}}</h6>
+   <h6>At-Bats: {{vm.selected.atBats}}</h6>
+   <h2>
+    <i>HOME RUNS: {{vm.selected.homeRuns}}</i>
+  </h2>
+   <h6>Salary: ${{vm.selected.annualSalary}}</h6>
+   <h6>At-Bats PER Homer: {{vm.selected.atBatsPerHomeRun}}</h6>
+ <button id="btn"  ng-click="vm.setEditTodoPlayer()" > Edit this Player</button>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ <div ng-repeat="player in vm.ballplayers">
+	         <h3>{{player}}</h3><br>
+</div>
+ 
+ -->
 
  
 

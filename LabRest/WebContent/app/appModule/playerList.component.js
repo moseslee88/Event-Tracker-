@@ -15,7 +15,7 @@ angular.module('appModule')
 				vm.ballplayers =response.data;			
 			})	
 			
-	    var agentFees = null;
+	   
 		
 		//CREATE
 		vm.createBallplayer = function(player) {
@@ -39,16 +39,21 @@ angular.module('appModule')
 			ballplayerService.destroy(id);
 		}
 		
+		 //var agentFees = null;
+		
 		//random functionality that returns total of fees paid to sports agent based on % of aggregate TOTAL salaries
 		vm.costPaidtoAgents = function() {
 			ballplayerService.index().then(function(response) {
 				vm.ballplayers  = response.data;
-				agentFees = vm.ballplayers.length * 0.05;  //average 5 percent commission fee, like Mark Steinberg or Scott Boras
-				return agentFees;
+				vm.agentFees = vm.ballplayers.reduce(function(a, vm.ballplayers.salary)  {
+					return a + value;
+				}, 0)  * 0.05;  //average 5 percent commission fee, like Mark Steinberg or Scott Boras
+				//vm.agentFees = vm.ballplayers.length * 0.05;
+				return vm.agentFees;
 			})
 		}	
 		
-		
+		vm.agentFees = vm.costPaidtoAgents();
 		
 		vm.oneBallplayer = {};
 		
