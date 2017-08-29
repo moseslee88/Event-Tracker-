@@ -49,6 +49,5 @@ public class LabTest {
 		b = em.find(Ballplayer.class, 2);
 		assertNotNull(b);
 		assertEquals(b.getName(), "Giancarlo Stanton");
-		//assertEquals(b.getName(), "te");
 	}
 }
