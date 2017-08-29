@@ -25,10 +25,10 @@ angular.module('appModule')
 				vm.players = resp.data;
 			
 			    });
-		      }
+		      })
 			.catch(function() {
   				console.log("can't reach database");
-  			});
+  			})
     		}
 		
 			
