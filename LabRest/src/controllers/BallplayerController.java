@@ -67,6 +67,7 @@ public class BallplayerController {
 			Ballplayer updatedPlayer = null;
 			try {
 				updatedPlayer = mapper.readValue(labJSON, Ballplayer.class);
+				dao.update(id, updatedPlayer);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -116,7 +116,7 @@
   </h2>
    <h6>Salary: ${{vm.selected.annualSalary}}</h6>
    <h6>At-Bats PER Homer: {{vm.selected.atBatsPerHomeRun}}</h6>
- <button id="btn"  ng-click="vm.setEditTodoPlayer()" > Edit this Player</button>
+ <button id="btn"  ng-show="vm.selected" ng-click="vm.setEditTodoPlayer()" > Edit this Player</button>
  </div>
  
  

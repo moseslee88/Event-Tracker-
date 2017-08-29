@@ -21,15 +21,16 @@ angular.module('appModule')
 		//CREATE
 		vm.createBallplayer = function(player) {
 			ballplayerService.create(player).then(function(response) {
+				//vm.ballplayers=response.data;
 				ballplayerService.index().then(function (resp)  {			
-				vm.players = resp.data;
+				vm.ballplayers = resp.data;
 			
 			    });
 		      })
 			.catch(function() {
   				console.log("can't reach database");
   			})
-    		}
+    		}        // 	vm.ballplayers=ballplayerService.index();
 		
 			
 		//UPDATE
@@ -115,6 +116,7 @@ angular.module('appModule')
        		
        		vm.setEditTodoPlayer=function() {
        			vm.editPlayer = angular.copy(vm.selected);
+       			//vm.editedBallplayer = angular.copy(vm.selected);
      
        		}
        		
