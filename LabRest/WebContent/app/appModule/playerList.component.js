@@ -5,7 +5,8 @@ angular.module('appModule')
     	controller: function(ballplayerService)  {
     		var vm = this;
     		
-    		vm.selected=null;
+    		
+  		vm.selected=null;
     		
     		vm.showPlayerEditForm = true;
     		
@@ -20,11 +21,16 @@ angular.module('appModule')
 		//CREATE
 		vm.createBallplayer = function(player) {
 			ballplayerService.create(player).then(function(response) {
-				vm.players = response.data;
+				ballplayerService.index().then(function (resp)  {			
+				vm.players = resp.data;
 			
-			})
+			    });
+		      }
+			.catch(function() {
+  				console.log("can't reach database");
+  			});
+    		}
 		
-		};
 			
 		//UPDATE
 		vm.editBallplayer = function(id,player) {
@@ -45,10 +51,11 @@ angular.module('appModule')
 		vm.costPaidtoAgents = function() {
 			ballplayerService.index().then(function(response) {
 				vm.ballplayers  = response.data;
-				vm.agentFees = vm.ballplayers.reduce(function(a, vm.ballplayers.salary)  {
-					return a + value;
-				}, 0)  * 0.05;  //average 5 percent commission fee, like Mark Steinberg or Scott Boras
-				//vm.agentFees = vm.ballplayers.length * 0.05;
+				//vm.agentFees = vm.ballplayers.reduce(function(a, vm.ballplayers.salary)  {
+				//	return a + vm.ballplayers.salary;
+				//}, 0)  * 0.05;  //average 5 percent commission fee, like Mark Steinberg or Scott Boras
+				//vm.ballplayers.forEach(function
+				vm.agentFees = vm.ballplayers.length * 0.05;
 				return vm.agentFees;
 			})
 		}	
@@ -129,9 +136,7 @@ angular.module('appModule')
     		function() {
     		var vm = this; 		
     		vm.todos = [
-   		
-   		
-   		
+
    		name : 'Kobe Bryant',
     			    salary : 25000000,
     			    pointspergame : 25.0,

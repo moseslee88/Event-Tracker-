@@ -103,6 +103,24 @@
  
  
  
+ 
+ 
+       <!--   ----DETAILS DIV--- -->
+ <div ng-show="vm.selected" ng-hide="vm.editTodo"><button id="btn"  ng-show="vm.selected" ng-click="vm.displayTable()" > GO BACK / Display Table</button> 
+   <h6>ID: {{vm.selected.id}}</h6>
+   <h6>Player name: {{vm.selected.name}}</h6>
+   <h6>Season: {{vm.selected.season}}</h6>
+   <h6>At-Bats: {{vm.selected.atBats}}</h6>
+   <h2>
+    <i>HOME RUNS: {{vm.selected.homeRuns}}</i>
+  </h2>
+   <h6>Salary: ${{vm.selected.annualSalary}}</h6>
+   <h6>At-Bats PER Homer: {{vm.selected.atBatsPerHomeRun}}</h6>
+ <button id="btn"  ng-click="vm.setEditTodoPlayer()" > Edit this Player</button>
+ </div>
+ 
+ 
+ 
  <!--
  <h1>TOTAL AGENT FEES PER YEAR : ${{vm.agentFees}}</h1>
 

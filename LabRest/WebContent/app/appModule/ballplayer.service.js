@@ -36,7 +36,7 @@ angular.module('appModule')
 	      headers : {
 	        'Content-Type' : 'application/json'
 	      },
-	      data : pet
+	      data : player
 	    })
 	  };
   
